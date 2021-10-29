@@ -55,5 +55,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_this"></a> [this](#output\_this) | The PostgreSQL fleible server |
+| <a name="output_this"></a> [this](#output\_this) | The PostgreSQL flexible server |
 <!-- END_TF_DOCS -->

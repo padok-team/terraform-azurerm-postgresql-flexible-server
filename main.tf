@@ -15,10 +15,15 @@ resource "azurerm_postgresql_flexible_server" "this" {
   storage_mb             = var.storage_mb
   version                = var.pg_version
 
+  delegated_subnet_id = var.delegated_subnet_id
+  private_dns_zone_id = var.private_dns_zone_id
+
   backup_retention_days        = var.backup_retention_days
   geo_redundant_backup_enabled = var.geo_redundant_backup_enabled
 
   high_availability {
     mode = "ZoneRedundant"
   }
+
+  tags = var.tags
 }

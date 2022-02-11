@@ -54,3 +54,23 @@ variable "geo_redundant_backup_enabled" {
   description = "Is Geo-Redundant backup enabled on the PostgreSQL Flexible Server. Defaults to true. Changing this forces a new PostgreSQL Flexible Server to be created."
   default     = true
 }
+
+variable "delegated_subnet_id" {
+  type        = string
+  description = "The ID of the virtual network subnet to create the PostgreSQL Flexible Server. The provided subnet should not have any other resource deployed in it and this subnet will be delegated to the PostgreSQL Flexible Server, if not already delegated. Changing this forces a new PostgreSQL Flexible Server to be created."
+  default     = null
+}
+
+variable "private_dns_zone_id" {
+  type        = string
+  description = "The ID of the private dns zone to create the PostgreSQL Flexible Server. Changing this forces a new PostgreSQL Flexible Server to be created."
+  default     = null
+}
+
+variable "tags" {
+  type        = map(string)
+  description = "A mapping of tags which should be assigned to the PostgreSQL Flexible Server."
+  default = {
+    "terraform" : "true"
+  }
+}

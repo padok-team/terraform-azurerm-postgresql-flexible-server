@@ -16,6 +16,6 @@ module "flexible-postgresql" {
   administrator_login    = "admintest"
   administrator_password = "P4d0k!"
 
-  sku_name   = "B_Standard_B1ms"
+  sku_name   = "MO_Standard_E2s_v3"
   storage_mb = 32768
 }

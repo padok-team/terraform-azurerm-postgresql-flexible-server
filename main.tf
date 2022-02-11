@@ -1,10 +1,16 @@
+resource "random_password" "this" {
+  # Generate a random password if the administrator_password is not set
+  count  = var.administrator_password != null ? 0 : 1
+  length = 64
+}
+
 resource "azurerm_postgresql_flexible_server" "this" {
   name                = var.name
   resource_group_name = var.resource_group_name
   location            = var.location
 
   administrator_login    = var.administrator_login
-  administrator_password = coalesce(var.administrator_password, random_password.this[0].result)
+  administrator_password = var.administrator_password != null ? var.administrator_password : random_password.this[0].result
   sku_name               = var.sku_name
   storage_mb             = var.storage_mb
   version                = var.pg_version
@@ -15,9 +21,4 @@ resource "azurerm_postgresql_flexible_server" "this" {
   high_availability {
     mode = "ZoneRedundant"
   }
-}
-
-resource "random_password" "this" {
-  count  = var.administrator_password != null ? 0 : 1
-  length = 64
 }

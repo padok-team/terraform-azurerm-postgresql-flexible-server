@@ -3,18 +3,15 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "my-rd"
+  name     = "my-rg"
   location = "West Europe"
 }
 
 module "flexible-postgresql" {
-  source = "../"
+  source = "../.."
 
-  name                   = "example-flexible-postgresql"
-  resource_group_name    = azurerm_resource_group.example.name
-  location               = module.rg.this.location
-  administrator_login    = "admin"
-  administrator_password = random_password.password.result
-  sku_name               = "B_Standard_B1ms"
-  storage_mb             = 32768
+  name                = "example-flexible-postgresql"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  administrator_login = "admintest"
 }

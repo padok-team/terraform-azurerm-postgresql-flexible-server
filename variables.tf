@@ -22,6 +22,7 @@ variable "administrator_password" {
   type        = string
   description = "The Password associated with the administrator_login for the PostgreSQL Flexible Server. Required when create_mode is Default."
   sensitive   = true
+  default     = null
 }
 
 variable "pg_version" {
@@ -36,6 +37,19 @@ variable "sku_name" {
 }
 
 variable "storage_mb" {
-  type        = string
+  type        = number
   description = "The max storage allowed for the PostgreSQL Flexible Server. Possible values are 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216, and 33554432"
+  default     = 32768
+}
+
+variable "backup_retention_days" {
+  type        = number
+  description = "The backup retention days for the PostgreSQL Flexible Server. Possible values are between 7 and 35 days."
+  default     = 30
+}
+
+variable "geo_redundant_backup_enabled" {
+  type        = bool
+  description = "Is Geo-Redundant backup enabled on the PostgreSQL Flexible Server. Defaults to true. Changing this forces a new PostgreSQL Flexible Server to be created."
+  default     = true
 }

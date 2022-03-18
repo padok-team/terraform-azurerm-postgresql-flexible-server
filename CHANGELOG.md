@@ -2,14 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.0.0](https://github.com/padok-team/terraform-azurerm-postgresql-flexible-server/compare/v0.0.2...v1.0.0) (2022-03-04)
-
-
-### Features
-
-* add backup and high availability ([cf025fb](https://github.com/padok-team/terraform-azurerm-postgresql-flexible-server/commit/cf025fb1dafc590b84c3004cc3a17683f5652eab))
-* add networking and tags vars, add new example ([4840c63](https://github.com/padok-team/terraform-azurerm-postgresql-flexible-server/commit/4840c6390ca4aebe608717a8c2f03fe6d4af2d62))
-* **main:** add random password ([9a95f40](https://github.com/padok-team/terraform-azurerm-postgresql-flexible-server/commit/9a95f40f91767ae19e64183d993cf37bc3e82bae))
+## [0.1.0](https://github.com/padok-team/terraform-azurerm-postgresql-flexible-server/compare/v1.0.0...v0.1.0) (2022-03-18)
 
 ### [0.0.2](https://github.com/padok-team/terraform-azurerm-postgresql-flexible-server/compare/v0.0.1...v0.0.2) (2021-10-29)
 
